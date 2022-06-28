@@ -21,8 +21,11 @@ mount | grep nfs
 showmount -e  192.168.50.6
 
 #Testing the NFS Share
-touch /mnt/nfs_clientshare/file1.txt
+touch /mnt/nfs_clientshare/file_centos.txt
 ls -l /mnt/nfs_clientshare/
+
+showmount -e 192.168.50.6 #nfs server
 
 whoami
 echo "192.168.50.6:/mnt/nfs_share  /mnt/nfs_clientshare  nfs     defaults 0 0" | tee -a /etc/fstab
+cat /etc/fstab
